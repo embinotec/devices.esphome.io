@@ -3,10 +3,10 @@ title: "embinotec weatherstation"
 date-published: 2026-06-10
 type: weatherstation
 standard: global
-board	esp32-C6
-project-url	https://github.com/embinotec/embinotec-weatherstation/main/embinotec-weatherstation.yaml
-difficulty	1
-made-for-esphome	true
+board:	esp32-C6
+project-url:	https://github.com/embinotec/embinotec-weatherstation/main/embinotec-weatherstation.yaml
+difficulty:	1
+made-for-esphome:	true
 ---
 
 <!-- Describe the device here. See the front-matter table on the contributing page for valid options. -->
