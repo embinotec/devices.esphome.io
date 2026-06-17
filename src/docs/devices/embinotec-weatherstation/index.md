@@ -28,7 +28,7 @@ The weatherstation control is powered by an ESP32-c6 which gives the opportuniti
 
 ## Link to project
 
-The project could be found at [embinotec on github][]
+The project could be found at [embinotec on github][https://github.com/embinotec/embinotec-weatherstation]
 
 ## Basic Configuration
 
