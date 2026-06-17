@@ -26,6 +26,9 @@ The weatherstation control is powered by an ESP32-c6 which gives the opportuniti
    
 ![embinotec-weatherstation](embinotec-weatherstation.png "7 in 1")
 
+## Link to project
+
+The project could be found at [embinotec on github][]
 
 ## Basic Configuration
 
@@ -89,18 +92,18 @@ logger:
 ## Set byte-count to 32 and hit GENERATE. Copy it to your key in quotes.
 api:
   encryption:
-    key: !secret encryption_key
+    key: 
 
 ## ------ OVER THE AIR UPDATE ------
 ## To be able to do updates over the Air by ESP Home it is nessesary to have this option activated.
 ota:
   - platform: esphome
-    password: !secret ota_password
+    pwd: 
 
 ## ------- WIFI SETTINGS -------
 wifi:
-  ssid: !secret wifi_ssid
-  password: !secret wifi_password
+  ssid: 
+  pwd: 
   use_address: embinotec-weatherstation.local ## when 
   #power_save_mode: NONE
   fast_connect: true ## Optional: speeds up connection
@@ -113,7 +116,7 @@ wifi:
   ## SECTION: CAPTIVE PORTAL must be active
   ap:
     ssid: "Weatherstation Fallback Hotspot"
-    password: "embinotec"
+    pwd: 
 
 ## ------- mDNS SETTINGS -------
 mdns:
@@ -143,6 +146,7 @@ esp32_improv:
 
 ## ------ NTP SERVER -------
 ## NTP Server to receive the time by NTP server.
+## Adjust your timezone.
 time:
   - platform: homeassistant
     id: homeassistant_time
@@ -178,21 +182,6 @@ deep_sleep:
   run_duration: 1min
   sleep_duration: 2min
 
-## Example configuration with single pin wakeup on BK72xx
-#deep_sleep:
-#  wakeup_pin:  GPIO1 # CHARGE PIN will wakeup when P1 is high
-#  wakeup_pin_mode: IGNORE # state of P8 at the moment of going to sleep does not influence the wakeup scenario
-
-## Example configuration with multi-pin wakeup on BK72xx
-#deep_sleep:
-#  wakeup_pin:
-#    - pin:
-#        number: P8
-#        inverted: True  # will wake up when P8 is low
-#      wakeup_pin_mode: KEEP_AWAKE # will prevent sleep as long as P8 is low
-#    - pin: P24 # will wake up when P24 goes high
-#      wakeup_pin_mode: INVERT_WAKEUP # flips the trigger level after each wake
-
 ## ------ STATUS LED --------
 ## The red status LED at the bottom side of the weather station shows the status of the system by pattern:
 ## OFF: everything is ok
@@ -200,7 +189,6 @@ deep_sleep:
 ## fast blink: Error
 status_led:
   pin: GPIO0 ## esp32c6 
-  #pin: GPIO2 ## esp32s3
 
 
 ## ------ UV INDEX & LIGHT SENSOR -------
